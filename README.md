@@ -1,6 +1,7 @@
 ## Cadeira de POO
 
-Factos e regras:
+Factos e regras: <br>   
+```prolog
 1 - o diogu é lindo<br>
 2 - n é pra dar só copy paste<br>
 3 - a rita é ****<br>
