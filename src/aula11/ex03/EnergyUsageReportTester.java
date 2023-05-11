@@ -1,5 +1,6 @@
-package aula11;
+package aula11.ex03;
 import java.util.Arrays;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class EnergyUsageReportTester {
@@ -10,7 +11,11 @@ public class EnergyUsageReportTester {
         EnergyUsageReport energyReport = new EnergyUsageReport();
         
         // Load the customer data from a text file using the load() method
-        energyReport.load("clients.txt");
+        try{
+        energyReport.load("clients.txt");}
+        catch(FileNotFoundException e){
+            System.out.println("File not found");
+        }
         
         // Add one or more customers to the collection using the addCustomer() method
         Customer newCustomer = new Customer(999, Arrays.asList(1500.0, 2000.0, 2500.0, 3000.0));
@@ -21,6 +26,8 @@ public class EnergyUsageReportTester {
         
         // Retrieve a customer from the collection using the getCustomer() method
         Customer retrievedCustomer = energyReport.getCustomer(1025);
+        System.out.println(retrievedCustomer);
+        //O código do toString (do customer) está comentado pois não sabia se era para usar ou não
         
         // Calculate the total energy usage for a specific customer using the calculateTotalUsage() method
         double totalEnergyUsage = energyReport.calculateTotalUsage(1003);
