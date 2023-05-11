@@ -26,7 +26,7 @@ public class EnergyUsageReportTester {
         
         // Retrieve a customer from the collection using the getCustomer() method
         Customer retrievedCustomer = energyReport.getCustomer(1025);
-        System.out.println(retrievedCustomer);
+        System.out.println(retrievedCustomer);//apenas para o código não ter warning amarela
         //O código do toString (do customer) está comentado pois não sabia se era para usar ou não
         
         // Calculate the total energy usage for a specific customer using the calculateTotalUsage() method
