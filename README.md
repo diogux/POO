@@ -10,7 +10,3 @@ Factos e regras: <br>
 6 - antonio diz q açai sabe a terra
 7 - o andre diz q prefere dar parado
 8 - a rejuna tem uma garrafa toda xpto
-
-
-
-
