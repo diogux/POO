@@ -1,4 +1,4 @@
-package aula11;
+package aula11.ex02;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

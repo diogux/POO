@@ -1,4 +1,4 @@
-package aula11;
+package aula11.ex02;
 import java.util.List;
 import java.util.ArrayList;
 
