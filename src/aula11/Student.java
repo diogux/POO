@@ -1,0 +1,35 @@
+package aula11;
+import java.util.List;
+
+public class Student {
+
+    private String name;
+    private List<Double> grades;
+
+    public Student(String name, List<Double> grades) {
+        this.name = name;
+        this.grades = grades;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Double> getGrades() {
+        return grades;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGrades(List<Double> grades) {
+        this.grades = grades;
+    }
+
+    public String toString(){
+        //the name and the average of the grades
+        
+        return String.format("%s: %.2f", name, new SimpleGradeCalculator().calculate(grades));
+    }
+}
