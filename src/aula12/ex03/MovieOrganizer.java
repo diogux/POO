@@ -3,10 +3,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.TreeMap;
-
+import java.util.Map;
 
 public class MovieOrganizer {
-    TreeMap<String, Movie> movies = new TreeMap<>();
+    Map<String, Movie> movies = new TreeMap<>();
 
     public void loadMovies(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
