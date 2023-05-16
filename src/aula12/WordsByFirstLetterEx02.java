@@ -18,10 +18,9 @@ public class WordsByFirstLetterEx02 {
     public static ArrayList<String> getWordsList(String filename) throws IOException {
         ArrayList<String> AllWords = new ArrayList<>();
         Scanner input = new Scanner(new FileReader(filename));
-        input.useDelimiter("[\\s\\t\\n\\p{Punct}&&[^']]+");
         while (input.hasNext()) {
             String word = input.next().toLowerCase();
-            if (word.length() >= 3 && !word.matches(".*\\d.*") && !word.matches(".*\\W.*")){
+            if (word.length() >= 3 && !word.matches(".*\\d.*") && !word.matches(".*\\W.*") && !word.matches(".*\\_.*")){
             AllWords.add(word);
         }
     }
@@ -52,6 +51,7 @@ public class WordsByFirstLetterEx02 {
             TreeMap<String, Integer> wordsMap = AllWordsMap.get(firstLetter);
             for (String word : wordsMap.keySet()) {
                 pw.write(word + ", " + wordsMap.get(word) + "; ");
+                
             }
             pw.write("\n");
         }
@@ -62,6 +62,6 @@ public class WordsByFirstLetterEx02 {
         e.printStackTrace();
     }
 
-    
+    // what does this regex do (".*\\_.*")?  
 }
 }
