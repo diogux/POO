@@ -1,15 +1,16 @@
-package aula12.ex01;
+package aula12;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
-public class ex01 {
+
+public class TotalOfDifferentWordsEx01 {
     public static void main(String[] args) throws IOException {
     Scanner input = new Scanner(new FileReader("movies.txt"));
     ArrayList<String> AllWords = new ArrayList<>();
     HashSet<String> AllWordsSet = new HashSet<>();
-    
+    input.useDelimiter("[\\s\\t\\n\\p{Punct}&&[^']]+");
     while (input.hasNext()) {
         String word = input.next().toLowerCase();
         AllWords.add(word);
