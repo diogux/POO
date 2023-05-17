@@ -1,0 +1,4 @@
+Movies from the genre action with score > 60: 
+| --Title--                      | Running Time   | Score      | Rating   | Genre      |
+| The Hulk                       | 138            | 61,0       | PG-13    | action     |
+| The Italian Job                | 111            | 66,5       | PG-13    | action     |

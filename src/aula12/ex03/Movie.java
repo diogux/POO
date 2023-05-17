@@ -22,8 +22,11 @@ public class Movie {
     public String getGenre() {return genre;}
 
     @Override
-    public String toString() {
-        return String.format("Title: %s Running Time: %d Score: %.1f Rating: %s Genre: %s ", title, runningTime, score, rating, genre);
-    }
+public String toString() {
+    return String.format("| %-30s | %-14s | %-10.1f | %-8s | %-10s |", title, runningTime, score, rating, genre);
+}
+
+    
+
 
 }
