@@ -48,12 +48,16 @@ public class MovieOrganizer {
     }
 
     public void listAllMovies(){
+        System.out.println(String.format("| %-30s | %-14s | %-10s | %-8s | %-10s |",
+        "--Title--", "Running Time", "Score", "Rating", "Genre"));
+        List<Movie> MovieList = new ArrayList<>();
         for (String genre : movies.keySet()) {
-            System.out.println(String.format("| %-30s | %-14s | %-10s | %-8s | %-10s |",
-            "--Title--", "Running Time", "Score", "Rating", "Genre"));
-            for (Movie movie : movies.get(genre)) {
-                System.out.println(movie);
-            }
+             MovieList.addAll(movies.get(genre));
+             MovieList.sort(Comparator.comparing(Movie::getTitle));
+         }
+
+        for (Movie movie : MovieList) {
+            System.out.println(movie);
         }
     }
 
@@ -65,15 +69,20 @@ public class MovieOrganizer {
             for(Movie movie:movies.get(genre)){
                 System.out.println(movie);
             }
-            System.out.println("----------------------------------------");
+            System.out.println("-----------------------------------------------------------------------------------------");
         }
     }
 
-    public void listAllGenres(){
-        for(String genre: movies.keySet()){
-            System.out.printf("Genre: %s (Number of Movies: %d)\n",genre, movies.get(genre).size());
+    public void listAllGenres() {
+        System.out.println("Movie Genre | Number of Movies");
+        System.out.println("-----------------------------");
+    
+        for (String genre : movies.keySet()) {
+            int movieCount = movies.get(genre).size();
+            System.out.printf("%-11s | %d\n", genre, movieCount);
         }
     }
+    
 
     public void listMoviesByRunningTime() {
         List<Movie> MovieByTime = new ArrayList<>();
