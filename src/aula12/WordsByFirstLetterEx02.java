@@ -62,6 +62,5 @@ public class WordsByFirstLetterEx02 {
         e.printStackTrace();
     }
 
-    // what does this regex do (".*\\_.*")?  
 }
 }
