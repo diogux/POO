@@ -6,6 +6,8 @@ import java.util.TreeMap;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
 
 
 //Nota: o código não considera uma palavra se conter números ou caracteres especiais 
@@ -43,7 +45,7 @@ public class WordsByFirstLetterEx02 {
 
     public static void writeFile(TreeMap<Character, TreeMap<String, Integer>> AllWordsMap){
         try {
-        FileWriter fw = new FileWriter("word_counter_aula12.txt");
+        FileWriter fw = new FileWriter("word_counter_aula12.txt",StandardCharsets.UTF_8);
         PrintWriter pw = new PrintWriter(fw);
         pw.write("Result: (First Letter: word, number of occurrences; etc)\n");
         for (Character firstLetter : AllWordsMap.keySet()) {
