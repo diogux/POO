@@ -1,0 +1,30 @@
+id;clientId;storeId;items;orderDate;express;totalPrice
+2;2;102;Cappuccino:4.5|Bolo de Chocolate:5.5|;2023-05-01;normal;10.0
+3;3;103;Água Mineral:1.5|Pão Francês:1.0|;2023-05-01;expresso;3.25
+4;4;104;Café com Leite:3.5|Sandes de Presunto:4.0|;2023-05-02;normal;7.5
+5;5;105;Chá de Erva-Cidreira:2.0|Torta de Frango:6.0|;2023-05-02;normal;8.0
+6;6;101;Tosta Mista:5.0|Coca-Cola:3.5|;2023-05-03;expresso;11.05
+7;7;103;Café Expresso:2.5|Sandes de Queijo:3.0|;2023-05-03;normal;5.5
+8;8;102;Cappuccino:4.5|Bolo de Cenoura:5.0|;2023-05-04;expresso;12.35
+9;9;104;Sumo de Laranja:3.0|Salada de Frutas:4.5|;2023-05-04;normal;7.5
+10;10;105;Sandes de Frango:6.5|Refrigerante Guaraná:3.0|;2023-05-05;normal;9.5
+11;11;101;Café com Leite:3.5|Sandes de Queijo:3.0|;2023-05-05;expresso;8.45
+12;12;103;Café Expresso:2.5|Croissant:2.5|;2023-05-06;normal;5.0
+13;13;102;Chá de Hortelã:2.0|Bolo de Chocolate:5.5|;2023-05-06;expresso;9.75
+14;14;104;Água Mineral:1.5|Pão Francês:1.0|;2023-05-07;normal;2.5
+15;15;105;Café:2.5|Sandes de Presunto:4.0|;2023-05-07;expresso;8.45
+16;16;101;Chá de Camomila:2.0|Salgado de Queijo:2.5|;2023-05-08;normal;4.5
+17;17;103;Tosta Mista:5.0|Refrigerante Coca-Cola:3.5|;2023-05-08;normal;8.5
+18;18;102;Café com Leite:3.5|Bolo de Cenoura:5.0|;2023-05-09;expresso;11.05
+19;19;104;Café Expresso:2.5|Sumo de Laranja:3.0|;2023-05-09;expresso;7.15
+20;21;101;Café com Leite:3.5|Sandes de Queijo:3.0|Tosta Mista:5.0|Refrigerante Guaraná:3.0|;2023-05-10;normal;14.5
+21;22;103;Café Expresso:2.5|Croissant:2.5|Água Mineral:1.5|Pão Francês:1.0|;2023-05-10;expresso;9.75
+22;23;102;Cappuccino:4.5|Bolo de Cenoura:5.0|Chá de Hortelã:2.0|;2023-05-11;expresso;14.95
+23;24;104;Sumo de Laranja:3.0|Salada de Frutas:4.5|Sandes de Frango:6.5|;2023-05-11;normal;14.0
+24;25;105;Café:2.5|Sandes de Presunto:4.0|;2023-05-12;expresso;8.45
+25;26;101;Café com Leite:3.5|Sandes de Queijo:3.0|Tosta Mista:5.0|Refrigerante Guaraná:3.0|;2023-05-12;normal;14.5
+26;27;103;Café Expresso:2.5|Croissant:2.5|Água Mineral:1.5|Pão Francês:1.0|;2023-05-13;expresso;9.75
+27;28;102;Cappuccino:4.5|Bolo de Cenoura:5.0|Chá de Hortelã:2.0|;2023-05-13;expresso;14.95
+28;29;104;Sumo de Laranja:3.0|Salada de Frutas:4.5|Sandes de Frango:6.5|;2023-05-14;normal;14.0
+29;30;105;Café:2.5|Sandes de Presunto:4.0|Chá de Erva-Cidreira:2.0|Torta de Frango:6.0|;2023-05-14;expresso;18.85
+30;97;86;Coca-Cola:2.5|Pepsi:2.5|;2004-09-01;expresso;6.5

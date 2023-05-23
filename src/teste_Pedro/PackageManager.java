@@ -34,6 +34,12 @@ public class PackageManager {
         }
     }
 
+    public void addPackage(Package p){
+        if (packages.containsKey(p.getId())) {
+            throw new IllegalArgumentException("Package already exists");
+        }
+        packages.put(p.getId(), p);
+    }
     
 
     public void removePackage(int id){
@@ -59,6 +65,8 @@ public class PackageManager {
             for(Package p : packages.values() ){
                 ShippingCostCalculator calculadora = new ShippingCost();
                 double price = calculadora.calculateShippingCost(p);
+                //round price to 2 decimal cases
+                price = Math.round(price * 100.0) / 100.0;
                 pw.write(p.toString() +  ":"+ price + "\n");
             }        
             pw.close();
