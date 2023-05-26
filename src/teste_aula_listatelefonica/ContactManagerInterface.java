@@ -10,7 +10,4 @@ public interface ContactManagerInterface {
     public void listContactsOrderedByEmail();
     public void listContactsOrderedByNumber();
     public void listContactsOrderedByBirthDate();
-
-
-    
 }

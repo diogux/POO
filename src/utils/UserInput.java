@@ -64,6 +64,28 @@ public class UserInput {
         return value;
     }
 
+    public static long newLong(String prompt) {
+        System.out.print(prompt);
+        while (!sc.hasNextLong()) {
+            System.out.println("Erro. É necessário colocar um número inteiro.");
+            sc.nextLine();
+        }
+        long value = sc.nextLong();
+        sc.nextLine();
+        return value;
+    }
+
+    public static long longInRange(String prompt, long min, long max) {
+        long value;
+        do {
+            value = newLong(prompt);
+            if (value < min || value > max) {
+                System.out.printf("Erro. O número precisa de estar entre %d e %d.\n", min, max);
+            }
+        } while (value < min || value > max);
+        return value;
+    }
+
     public static int intInRange(String prompt, int min, int max) {
         int value;
         do {

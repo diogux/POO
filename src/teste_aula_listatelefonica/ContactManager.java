@@ -1,20 +1,38 @@
 package teste_aula_listatelefonica;
 import java.util.TreeMap;
 import java.util.Map;
+import java.time.LocalDate;
 import java.util.Comparator;
 
 public class ContactManager implements ContactManagerInterface {
-    Map<Integer , Contact> contacts = new TreeMap<Integer, Contact>();
+    Map<String , Contact> contacts = new TreeMap<>();
 
     @Override
-    public void addContact(Contact contact){contacts.put(contact.getNumber(), contact);}
+    public void addContact(Contact contact)
+        {contacts.put(contact.getNumber(), contact);}
     
     @Override
-    public void removeContact(Contact contact){contacts.remove(contact.getNumber());}
+    public void removeContact(Contact contact){
+        if (contacts.containsKey(contact.getNumber())){
+            contacts.remove(contact.getNumber());
+        }
+
+    }
 
 
     @Override
-    public void updateContact(Contact contact){contacts.put(contact.getNumber(), contact);}
+    public void updateContact(Contact contact){
+        if (contacts.containsKey(contact.getNumber())){
+            contacts.put(contact.getNumber(), contact);
+        }
+    }
+
+    public void updateMap(Contact contact, String number){
+        if (contacts.containsKey(number)){
+            contacts.remove(number);
+            contacts.put(contact.getNumber(), contact);
+        }
+    }
     
     @Override   
     public void listContacts(){
@@ -40,13 +58,15 @@ public class ContactManager implements ContactManagerInterface {
     @Override 
     public void listContactsOrderedByNumber(){
         contacts.values().stream()  // Get the stream of contact values
-        .sorted(Comparator.comparingInt(Contact::getNumber))  // Sort contacts by number
+        .sorted(Comparator.comparing(Contact::getNumber))  // Sort contacts by number
         .forEach(System.out::println);  // Print each contact
     }
 
     @Override
     public void listContactsOrderedByBirthDate(){
-
+        contacts.values().stream()  // Get the stream of contact values
+        .sorted(Comparator.comparing(Contact::getBirthDate))  // Sort contacts by birth date
+        .forEach(System.out::println);  // Print each contact
     }
 
     @Override
@@ -57,6 +77,13 @@ public class ContactManager implements ContactManagerInterface {
             }
         }
         return null;
+    }
+
+    public Contact searchContactByNumber(String number){
+        return contacts.get(number);
+    }
+
+    public void addContact(String name, int number, String email, LocalDate birthDate) {
     }
 
 
