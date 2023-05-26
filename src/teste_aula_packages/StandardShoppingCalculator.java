@@ -1,4 +1,4 @@
-package teste_doPedro_OficialOMG;
+package teste_aula_packages;
 
 public class StandardShoppingCalculator  implements ShoppingCostCalculator{
 

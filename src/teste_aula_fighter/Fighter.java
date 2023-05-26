@@ -1,4 +1,4 @@
-package porrada;
+package teste_aula_fighter;
 
 public abstract class Fighter {
     private String name;

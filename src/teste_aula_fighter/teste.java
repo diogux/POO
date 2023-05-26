@@ -1,4 +1,4 @@
-package porrada;
+package teste_aula_fighter;
 import java.util.Scanner;
 import java.util.Random;
 

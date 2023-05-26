@@ -1,4 +1,4 @@
-package listatelefonica;
+package teste_aula_listatelefonica;
 
 public interface ContactManagerInterface {
     public void addContact(Contact contacto);

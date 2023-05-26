@@ -1,82 +1,64 @@
-package listatelefonica;
-
-import java.util.ArrayList;
-import java.util.Collections;
+package teste_aula_listatelefonica;
+import java.util.TreeMap;
+import java.util.Map;
 import java.util.Comparator;
-import java.util.List;
 
 public class ContactManager implements ContactManagerInterface {
-    private List<Contact> contactos;
+    Map<Integer , Contact> contacts = new TreeMap<Integer, Contact>();
 
-    public ContactManager() {
-        contactos = new ArrayList<>();
+    @Override
+    public void addContact(Contact contact){contacts.put(contact.getNumber(), contact);}
+    
+    @Override
+    public void removeContact(Contact contact){contacts.remove(contact.getNumber());}
+
+
+    @Override
+    public void updateContact(Contact contact){contacts.put(contact.getNumber(), contact);}
+    
+    @Override   
+    public void listContacts(){
+        for(Contact contact : contacts.values()){
+            System.out.println(contact);
+        }
+    }
+
+    @Override    
+    public void listContactsOrderedByName(){
+        contacts.values().stream()  // Get the stream of contact values
+                .sorted((c1, c2) -> c1.getName().compareTo(c2.getName()))  // Sort contacts by name
+                .forEach(contact -> System.out.println(contact));  // Print each contact
     }
 
     @Override
-    public void addContact(Contact contacto) {
-        contactos.add(contacto);
+    public void listContactsOrderedByEmail(){
+        contacts.values().stream()  // Get the stream of contact values
+                .sorted((c1, c2) -> c1.getEmail().compareTo(c2.getEmail()))  // Sort contacts by email
+                .forEach(contact -> System.out.println(contact));  // Print each contact
+    }
+    
+    @Override 
+    public void listContactsOrderedByNumber(){
+        contacts.values().stream()  // Get the stream of contact values
+        .sorted(Comparator.comparingInt(Contact::getNumber))  // Sort contacts by number
+        .forEach(System.out::println);  // Print each contact
     }
 
     @Override
-    public void removeContact(Contact contacto) {
-        contactos.remove(contacto);
+    public void listContactsOrderedByBirthDate(){
+
     }
 
     @Override
-    public void updateContact(Contact contacto) {
-        // Não é necessário fazer nada aqui, pois os contatos são atualizados automaticamente na lista.
-    }
-
-    @Override
-    public Contact searchContact(String nome) {
-        for (Contact contacto : contactos) {
-            if (contacto.getNome().equals(nome)) {
-                return contacto;
+    public Contact searchContact(String name){
+        for(Contact contact : contacts.values()){
+            if(contact.getName().equals(name)){
+                return contact;
             }
         }
-        return null; // Retorna null se o contato não for encontrado.
+        return null;
     }
 
-    @Override
-    public void listContacts() {
-        for (Contact contacto : contactos) {
-            System.out.println(contacto);
-        }
-    }
 
-    @Override
-    public void listContactsOrderedByName() {
-        List<Contact> sortedContacts = new ArrayList<>(contactos);
-        Collections.sort(sortedContacts, Comparator.comparing(Contact::getNome));
-        for (Contact contacto : sortedContacts) {
-            System.out.println(contacto);
-        }
-    }
 
-    @Override
-    public void listContactsOrderedByEmail() {
-        List<Contact> sortedContacts = new ArrayList<>(contactos);
-        Collections.sort(sortedContacts, Comparator.comparing(Contact::getEmail));
-        for (Contact contacto : sortedContacts) {
-            System.out.println(contacto);
-        }
-    }
-
-    @Override
-    public void listContactsOrderedByNumber() {
-        List<Contact> sortedContacts = new ArrayList<>(contactos);
-        Collections.sort(sortedContacts, Comparator.comparing(Contact::getNumero));
-        for (Contact contacto : sortedContacts) {
-            System.out.println(contacto);
-        }
-    }
-
-    @Override
-    public void listContactsOrderedByBirthDate() {
-        List<Contact> sortedContacts = new ArrayList<>(contactos);
-        Collections.sort(sortedContacts, Comparator.comparing(Contact::getDataNascimento));
-        for (Contact contacto : sortedContacts) {
-            System.out.println(contacto);
-        }
-    }
 }

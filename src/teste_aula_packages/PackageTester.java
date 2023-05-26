@@ -1,8 +1,7 @@
-package teste_doPedro_OficialOMG;
+package teste_aula_packages;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class PackageTester {
 
@@ -31,35 +30,11 @@ public class PackageTester {
         PackageManager manager = new PackageManager();
 
         // Lê todas as packages de um ficheiro
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("encomendas.txt"));
-            String line;
-            br.readLine();
-            while((line = br.readLine()) != null){
-                String[] fields = line.split(";");
-                int id = Integer.parseInt(fields[0]);
-                double weight = Double.parseDouble(fields[1]);
-                String destination = fields[2];
-                String sender = fields[3];
-                Package p = new Package(id, weight, destination, sender);
-                manager.addPackage(p);
-            }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       manager.loadFile("encomendas.txt");
 
         // Escreve todas as packages para um ficheiro
 
-        try (PrintWriter output1 = new PrintWriter("AllPackages.txt")) {
-            for (Package pkg : manager.packages.values()) {
-                output1.write(pkg.getSender() + ":" + pkg.getDestination() + ":" + pkg.getWeight() + ":" + manager.cost(pkg));
-                output1.write("\n");
-            }
-        } catch (IOException e) {
-            System.err.println("Error writing file: " + e.getMessage());
-            return;
-        }
+        manager.writeFile("packagesWritten.txt");
 
         // Imprime todas as packages
         manager.printAllPackages();
