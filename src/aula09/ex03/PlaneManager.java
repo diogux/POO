@@ -66,6 +66,18 @@ public class PlaneManager {
         }
     }
 
+    public List<Plane> getAllPlanes(){
+        List<Plane> planesList = new ArrayList<>();
+        if (planes.isEmpty())
+            return null;
+        else {
+            for (Plane plane : planes.values()) {
+                planesList.add(plane);
+            }
+            return planesList;
+        }
+    }
+
     public Plane getFastestPlane() {
         if (planes.isEmpty()) {
             return null;

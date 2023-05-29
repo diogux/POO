@@ -19,7 +19,6 @@ public class ContactManager implements ContactManagerInterface {
 
     }
 
-
     @Override
     public void updateContact(Contact contact){
         if (contacts.containsKey(contact.getNumber())){

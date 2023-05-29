@@ -1,0 +1,32 @@
+
+Alínea 1) ----------------------------------
+
+*** Evento em 2022-06-24, total=600.0
+       Kayak sporting activity for 10 participants
+       'Full menu' for 12 participants
+
+Clients:
+Cool bunch [Viseu]
+The best [Aveiro]
+Team mates [Coimbra]
+
+
+Events:
+*** Evento em 2022-06-25, total=940.0
+       'Drinks and Snacks' for 20 participants
+       Art museum tour with 20 participants
+
+*** Evento em 2022-06-24, total=600.0
+       Kayak sporting activity for 10 participants
+       'Full menu' for 12 participants
+
+*** Evento em 2022-07-10, total=890.0
+       Bike sporting activity for 15 participants
+       Wine tasting with 20 participants
+
+*** Evento em 2022-06-30, total=940.0
+       'Light bites' for 20 participants
+       Architectural tour with 10 participants
+       River tour with 10 participants
+
+
